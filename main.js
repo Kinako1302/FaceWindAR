@@ -6,7 +6,6 @@ const { renderer, scene, camera } = mindarThree;
 
 const start = async () => {
   console.log("MindAR 起動中...");
-  renderer.setSize(window.innerWidth, window.innerHeight);
   const confettiTexture = new THREE.TextureLoader().load("confetti.png");
   const material = new THREE.SpriteMaterial({ map: confettiTexture, transparent: true });
   const sprite = new THREE.Sprite(material);
