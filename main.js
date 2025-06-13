@@ -10,7 +10,7 @@ const start = async () => {
   const confettiTexture = new THREE.TextureLoader().load("confetti.png");
   const material = new THREE.SpriteMaterial({ map: confettiTexture });
   const sprite = new THREE.Sprite(material);
-  sprite.scale.set(1, 1, 1);
+  sprite.scale.set(0.1, 0.1, 0.1)
   sprite.position.set(0.5, 0.2, 0); // 顔の右前あたり
 
   const anchor = mindarThree.addAnchor(1);
