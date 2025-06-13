@@ -10,14 +10,14 @@ const start = async () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const confettiTexture = new THREE.TextureLoader().load("confetti.png");
-  const geometry = new THREE.PlaneGeometry(1, 1);
+  const geometry = new THREE.PlaneGeometry(1, 1); // ← Spriteの代わりにPlaneを使う
   const material = new THREE.MeshBasicMaterial({ map: confettiTexture, transparent: true });
   const mesh = new THREE.Mesh(geometry, material);
 
-  mesh.position.set(0.5, 0.2, 0);
+  mesh.position.set(0.5, 0.2, 0); // 顔の横に配置
 
   const anchor = mindarThree.addAnchor(1);
-  anchor.group.add(mesh);
+  anchor.group.add(mesh); // ← Planeなのでエラーなし
 
   const animate = () => {
     mesh.position.x -= 0.01;
@@ -32,3 +32,4 @@ const start = async () => {
 };
 
 start();
+
